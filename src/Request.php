@@ -718,7 +718,8 @@ class Request
         array_unshift($data, $action);
 
         // @todo Use splat operator for unpacking when we move to PHP 5.6+
-        return call_user_func_array('static::send', $data);
+//        return call_user_func_array('static::send', $data);
+        return call_user_func_array([self::class, 'send'], $data);
     }
 
     /**
